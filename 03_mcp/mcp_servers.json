@@ -1,0 +1,10 @@
+{
+  "mcp_servers": [
+    {
+      "name": "context7",
+      "url": "https://mcp.context7.com/mcp",
+      "description": "Query official documentation",
+      "env_key": "CONTEXT7_API_KEY"
+    }
+  ]
+}
