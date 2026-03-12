@@ -6,6 +6,9 @@ from typing import Any
 from loguru import logger
 import sys
 import json
+from rich.console import Console
+from rich.markdown import Markdown
+console = Console()
 
 
 
@@ -183,7 +186,7 @@ class MiniManus:
                         logger.info("*" * 60)
                         logger.info("* 最终答案 (Agent Loop 终止)")
                         logger.info("*" * 60)
-                        logger.info(output)
+                        console.print(Markdown(output))
                         return
                     
             if content:
