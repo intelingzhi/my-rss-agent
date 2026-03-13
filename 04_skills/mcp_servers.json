@@ -1,0 +1,18 @@
+{
+  "mcp_servers": [
+    {
+      "name": "context7",
+      "url": "https://mcp.context7.com/mcp",
+      "description": "Query official documentation for libraries like react, python, fastapi, next.js",
+      "env_key": "CONTEXT7_API_KEY"
+    },
+    {
+      "name": "github",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "description": "GitHub operations - read files, search repos, manage issues",
+      "env_key": "GITHUB_PERSONAL_ACCESS_TOKEN",
+      "accept": "application/json, text/event-stream",
+      "auth_header": "Bearer"
+    }
+  ]
+}
