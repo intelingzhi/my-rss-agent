@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "content": "Python 是一种高级编程语言",
+    "source": "doc1"
+  },
+  {
+    "id": 1,
+    "content": "JavaScript 是 Web 开发语言",
+    "source": "doc2"
+  },
+  {
+    "id": 2,
+    "content": "Rust 以安全性著称",
+    "source": "doc3"
+  }
+]
