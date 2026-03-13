@@ -1,0 +1,52 @@
+"""Lesson 06: Context Engineering - 入口"""
+
+import argparse
+from pathlib import Path
+
+from agent import MiniManus
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(
+        description="Lesson 06: Context Engineering - Message, Memory and Compression"
+    )
+    parser.add_argument(
+        "--task", required=True, help="The user task for the agent to solve."
+    )
+    parser.add_argument(
+        "--max-steps", type=int, default=10, help="Safety brake for the agent loop."
+    )
+    parser.add_argument(
+        "--session-id",
+        type=str,
+        default="default",
+        help="Session ID for conversation history.",
+    )
+    parser.add_argument(
+        "--max-tokens",
+        type=int,
+        default=4000,
+        help="Max tokens before compression.",
+    )
+    parser.add_argument(
+        "--log-dir",
+        type=str,
+        default=None,
+        help="Directory for log files (default: ./logs in lesson dir).",
+    )
+    args = parser.parse_args()
+
+    if args.log_dir:
+        log_dir = Path(args.log_dir)
+    else:
+        log_dir = Path(__file__).parent / "logs"
+
+    agent = MiniManus(
+        max_steps=args.max_steps, log_dir=log_dir, max_tokens=args.max_tokens
+    )
+    agent.run(task=args.task, session_id=args.session_id)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
